@@ -1,0 +1,35 @@
+~/code/hrr35-cows-r-us
+|- src/ (or client/)  <--- where you write JavaScript code
+|  |- components/
+|  |  |- CowList.js
+|  |  |- CowDetails.js
+|  |- App.js
+|
+|
+|- dist/ (or public/ or www/)    <---- automatically transpiled by Babel.
+|  |                                   serve static assets from here.
+|  |                                   files in this dir are run on browser
+|  |- components/
+|  |  |- CowList.js (transpiled version; don't commit it)
+|  |  |- CowDetails.js (transpiled version; don't commit it)
+|  |- App.js (transpiled version; don't commit it)
+|  |- index.html               <---- where you write HTML code
+|  |- styles.css               <---- where you write CSS code
+|
+|
+|- server/              <---- files in this dir are run by Node.js
+|  |- index.js
+|  |- helpers.js
+|
+|- db/
+|  |- index.js
+|
+|- node_modules/
+|  |- ...
+|  |- ...
+|
+|- .gitignore
+|- package.json
+|- package-lock.json
+|- webpack.config.js
+|- README.md
