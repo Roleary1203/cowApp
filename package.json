@@ -1,0 +1,54 @@
+{
+  "name": "cows",
+  "version": "1.0.0",
+  "description": "cow app for Hack Reactor",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-react": "1.0.0",
+    "babel-preset-react": "6.24.1",
+    "bootstrap": "^4.1.3",
+    "express": "^4.16.4",
+    "jquery": "^2.2.4",
+    "lodash": "^4.6.1",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "popper.js": "^1.12.9",
+    "react": "^15.6.2",
+    "react-addons": "^0.9.1-deprecated",
+    "underscore": "^1.9.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "6.24.1",
+    "exports-loader": "0.6.4",
+    "mocha": "2.3.3",
+    "react-addons-test-utils": "15.6.0",
+    "react-dom": "^15.6.2",
+    "uglifyjs-webpack-plugin": "0.4.3",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "start": "live-server",
+    "build": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roleary1203/cowApp.git"
+  },
+  "keywords": [
+    "cows",
+    "moo",
+    "hrr35"
+  ],
+  "author": "Ryan O'Leary",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Roleary1203/cowApp/issues"
+  },
+  "homepage": "https://github.com/Roleary1203/cowApp#readme"
+}
