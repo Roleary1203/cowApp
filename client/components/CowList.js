@@ -1,8 +1,7 @@
 import React from 'react';
-import Cows from '../data/cows.js';
-import App from './app.js'
 
-console.log(Cows)
+
+
 var CowList = (props) => (
 
 	
@@ -11,8 +10,8 @@ var CowList = (props) => (
 
   	
   	 <h1>Cows
-  	 	{Cows.map((cow,index) =>
-  	 		<li key={index}>{cow.cowName}</li>
+  	 	{props.cows.map((cow,index) =>
+  	 		<li key={index} onClick={props.action}>{cow.cowName}</li>
   	 	)}</h1>	
    )
   

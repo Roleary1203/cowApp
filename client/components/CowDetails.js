@@ -1,19 +1,18 @@
 import React from 'react';
 
 
-class CowDetails extends React.Component {
-  constructor() {
-    super()
-  }
 
-  render () {
-    return (
+var CowDetails = (props) => (
+ 
 
-      <h1>Test</h1>
-    )
-  }
+   <div>
+    
+    {props.state ? <h1>{props.cows[0].cowName}</h1> : null }
+    {props.state ? <h2>{props.cows[0].cowDesc}</h2> : null }
+    </div>   
+    
 
-}
+)
 
 
 export default CowDetails;

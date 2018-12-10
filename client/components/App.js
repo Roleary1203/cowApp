@@ -1,7 +1,8 @@
 import React from 'react';
 import CowDetails from './CowDetails.js'
 import CowList from './CowList.js'
-import Cows from "../data/cows.js"
+
+
 
 
 class App extends React.Component {
@@ -9,34 +10,49 @@ class App extends React.Component {
 		super(props);
 
 		this.state={
-			cows: Cows,
-			cow: Cows[0]
+       currentCow : '',
+       cows : [],
+      showDescription: false
 		}
 	}
+    handleClick(e) {
+      
+      if (this.state.showDescription === false) {
+      this.setState({
+        showDescription: !this.state.showDescription,
+        currentCow: e.target
+      })
+     }
+
+    }
 
     handleSubmit(e) {
     	e.preventDefault();
-        var data = new FormData(e.target);
-    	var values = stringifyFormData(data);
+      var data = new FormData(e.target);
     	var cowName = data.get('cowName');
     	var cowDesc = data.get('cowDesc');
-    	console.log('bfor', Cows)
-    	Cows.push({
-    		'cowName': cowName,
-    		'cowDesc': cowDesc
-    	 })
-    	console.log('after', Cows)
+      this.state.cows.push({
+        'cowName': cowName,
+        'cowDesc': cowDesc
+      })
+      this.setState({
+        cows: this.state.cows
+      })
+        
+     
+    
+    	
 
     }
 
 	render() {
 
-		console.log(this.state.cows, this.state.cow)
+		
 		return (
           <div>
-		    <CowDetails />
+		    <CowDetails currCow={this.state.currentCow} cows={this.state.cows} state={this.state.showDescription}/>
 		    
-		    <form onSubmit={this.handleSubmit}>
+		    <form onSubmit={this.handleSubmit.bind(this)}>
               <label>
                 Cow Name:
                   <input type="text" name="cowName" />
@@ -46,7 +62,7 @@ class App extends React.Component {
                 <input type="submit" value="Make Cow" />
             </form>
 
-             <CowList />
+             <CowList cows={this.state.cows} action={this.handleClick.bind(this)} />
           </div>
      
     )
@@ -55,13 +71,6 @@ class App extends React.Component {
 
 export default App;
 
-function stringifyFormData(fd) {
-  const data = {};
-	for (let key of fd.keys()) {
-  	data[key] = fd.get(key);
-  }
-  return JSON.stringify(data, null, 2);
-}
 
 
 
